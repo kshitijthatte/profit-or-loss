@@ -7,12 +7,12 @@ const result = document.querySelector("#result");
 const calculateProfitAndLoss = (initial, quantity, current) => {
   if (initial > current) {
     const loss = (initial - current) * quantity;
-    const lossPercentage = (loss / initial) * 100;
+    const lossPercentage = (loss / (initial * quantity)) * 100;
     result.style.color = "#DC2626";
     result.innerText = `Whoops!! Your loss is ${loss} and loss Percentage is ${lossPercentage} % :(`;
   } else if (current > initial) {
     const profit = (current - initial) * quantity;
-    const profitPercentage = (profit / initial) * 100;
+    const profitPercentage = (profit / (initial * quantity)) * 100;
     result.style.color = "#064E3B";
     result.innerText = `Yay!! Your Profit is ${profit} and profit Percentage is ${profitPercentage}%`;
   } else {
